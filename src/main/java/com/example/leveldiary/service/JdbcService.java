@@ -20,4 +20,9 @@ public class JdbcService {
         return jdbcAccountRepository.deleteById(id);
     }
 
+    public int update(Long id,String email){
+        Account account = new Account(id, email);
+        return jdbcAccountRepository.update(account);
+    }
+
 }

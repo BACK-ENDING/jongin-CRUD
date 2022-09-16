@@ -19,6 +19,13 @@ public class JdbcAccountRepository implements AccountRepository {
 
     private final JdbcTemplate jdbcTemplate;
     @Override
+    public int update(Account account) {
+    		return jdbcTemplate.update("update accounts set email = ? where id = ?",
+    				account.getEmail(),
+    				account.getId());
+    	}
+
+    @Override
     public int deleteById(Long id) {
         return jdbcTemplate.update("delete accounts where id = ?", id);
     }

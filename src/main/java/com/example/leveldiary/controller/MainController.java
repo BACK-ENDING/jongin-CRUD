@@ -23,3 +23,9 @@ public class MainController {
     public int deleteById(@RequestParam("id") Long id){
         return jdbcService.deleteById(id);
     }
+
+    @PutMapping("/update")
+    public int update(@RequestParam("id") Long id, @RequestParam("email") String email){
+        return jdbcService.update(id,email);
+    }
+
