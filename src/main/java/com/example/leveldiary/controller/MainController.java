@@ -18,3 +18,8 @@ public class MainController {
     public List<Account> findAll(){
         return jdbcService.findAll();
     }
+
+    @DeleteMapping("/delete")
+    public int deleteById(@RequestParam("id") Long id){
+        return jdbcService.deleteById(id);
+    }

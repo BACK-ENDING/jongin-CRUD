@@ -15,4 +15,9 @@ public class JdbcService {
     public List<Account> findAll() {
         return jdbcAccountRepository.findAll();
     }
+
+    public int deleteById(Long id){
+        return jdbcAccountRepository.deleteById(id);
+    }
+
 }

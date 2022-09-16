@@ -19,6 +19,12 @@ public class JdbcAccountRepository implements AccountRepository {
 
     private final JdbcTemplate jdbcTemplate;
     @Override
+    public int deleteById(Long id) {
+        return jdbcTemplate.update("delete accounts where id = ?", id);
+    }
+
+
+    @Override
     public List<Account> findAll() {
         return jdbcTemplate.query("select * from accounts",
                         (rs, rowNum) -> new Account(

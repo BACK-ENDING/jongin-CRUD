@@ -5,5 +5,8 @@ import com.example.leveldiary.entity.Account;
 import java.util.List;
 
 public interface AccountRepository {
+    int deleteById(Long id);
+
     List<Account> findAll();
+
 }
