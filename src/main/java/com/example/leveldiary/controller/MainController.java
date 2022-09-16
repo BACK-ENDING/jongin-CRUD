@@ -29,3 +29,8 @@ public class MainController {
         return jdbcService.update(id,email);
     }
 
+    @PostMapping("/save")
+    public long save(@RequestParam("email") String email){
+        return jdbcService.save(email);
+    }
+}

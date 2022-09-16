@@ -25,4 +25,8 @@ public class JdbcService {
         return jdbcAccountRepository.update(account);
     }
 
+    public long save(String email){
+        Account account = new Account(email);
+        return jdbcAccountRepository.save(account);
+    }
 }

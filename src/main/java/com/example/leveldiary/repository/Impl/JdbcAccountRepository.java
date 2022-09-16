@@ -18,6 +18,12 @@ import java.util.List;
 public class JdbcAccountRepository implements AccountRepository {
 
     private final JdbcTemplate jdbcTemplate;
+
+    @Override
+    public long save(Account account) {
+        return jdbcTemplate.update("insert into accounts(email) values(?)", account.getEmail());
+    }
+
     @Override
     public int update(Account account) {
     		return jdbcTemplate.update("update accounts set email = ? where id = ?",
